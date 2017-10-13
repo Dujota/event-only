@@ -1,1 +1,8 @@
-events#new page
+<%# Create a new event.
+views/events/new.html.erb
+you will have access to the @event instance variable %>
+<h1>Add a New Event</h1>
+
+<%= link_to 'Back to All Events', events_path %>
+
+<%= render 'event_form', event: @event %>
