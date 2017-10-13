@@ -1,8 +1,16 @@
-<%# Create a view to display a specific event.
+<%# 1. ) Create a view to display a specific event.
 views/events/show.html.erb
-you will have access to the @event instance variable %>
+you will have access to the @event instance variable
+
+2.)
+Delete an event.
+views/events/show.html.erb
+%>
 
 <h1><%= @event.name %></h1>
 
 <%= render 'event', event: @event %>
-<%= link_to 'Edit', new_event_path %>
+
+<%= link_to 'Back to all Events', events_path %> |
+<%= link_to 'Edit', edit_event_path %> |
+<%= link_to 'Delete', event_path(@event), method: :delete, data: {confirm: "Are you sure you want to delete the event '#{@event.name}'? You cannot change your mind after!"}%>
