@@ -1,1 +1,7 @@
-events#index page
+<%# Display all the events.
+views/events/index.html.erb
+you will have access to the @events instance variable %>
+<% @events.each do |current_event| %>
+<%= render 'event', event: current_event %>
+-----------------------------------------------
+<% end %>
